@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# R Website
+
+A modern real estate platform built with Next.js, featuring a unified ID system and comprehensive real estate universe.
+
+## Features
+
+- **Modern Design**: Built with Material 3 design principles
+- **Typography**: Uses Bricolage Grotesque font family
+- **Color Scheme**: Black, white, and gray color palette with green accents
+- **Responsive**: Fully responsive design for all devices
+- **TypeScript**: Built with TypeScript for type safety
+
+## Design System
+
+### Colors
+- **Primary**: Black (#000000)
+- **Secondary**: Gray (#666666)
+- **Accent**: Light Gray (#999999)
+- **Surface**: Light Gray (#f5f5f5)
+- **Success**: Green (#4CAF50)
+
+### Typography
+- **Font Family**: Bricolage Grotesque
+- **Weights**: Regular, Medium, Semibold, Bold
+
+### Components
+
+#### Header Component
+- Clean, minimalist header with R logo
+- Login button with Material 3 styling
+- Responsive design
+
+#### Home Banner Section
+- "One ID. One system. One real estate universe." messaging
+- Abstract city skyline graphic with green dots
+- Material 3 card design with elevation shadows
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── layout/
+│   │   │   └── Header.tsx
+│   │   └── home/
+│   │       └── HomeBannerSection.tsx
+│   ├── types/
+│   │   └── homeTypes/
+│   │       └── homeBannerSectionsTypes.ts
+│   ├── utils/
+│   │   └── constant/
+│   │       └── homeConstant/
+│   │           └── homeBannerSectionsConstant.ts
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+└── public/
+    └── r-logo.png
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js 15**: React framework
+- **TypeScript**: Type safety
+- **Tailwind CSS**: Utility-first CSS framework
+- **Material 3**: Design system principles
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Development
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
