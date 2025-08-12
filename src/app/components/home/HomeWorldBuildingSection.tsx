@@ -6,7 +6,7 @@ const HomeWorldBuildingSection: React.FC<
   Partial<HomeWorldBuildingSectionProps>
 > = ({ content = HOME_WORLD_BUILDING_SECTION_DATA.content }) => {
   return (
-    <section className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="w-full lg:pt-16 pt-10 lg:pb-24 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="lg:mb-24 mb-12">
           {/* Title */}

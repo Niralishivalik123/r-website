@@ -1,17 +1,23 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { PiPlayFill } from "react-icons/pi";
 import { HomeOnboardingSectionProps } from "../../types/homeTypes/homeOnboardingSectionTypes";
 import { HOME_ONBOARDING_SECTION_DATA } from "../../utils/constant/homeConstant/homeOnboardingSectionConstant";
+import Image from 'next/image';
 
 const HomeOnboardingSection: React.FC<Partial<HomeOnboardingSectionProps>> = ({
   content = HOME_ONBOARDING_SECTION_DATA.content,
 }) => {
   const router = useRouter();
+  const [showVideo, setShowVideo] = useState(false);
 
   const handleOpenForm = () => {
     router.push('/journey');
+  };
+
+  const handlePlayVideo = () => {
+    setShowVideo(true);
   };
   return (
     <section className="w-full lg:py-24 py-10 px-8 bg-[#F3F3F3]">
@@ -47,37 +53,47 @@ const HomeOnboardingSection: React.FC<Partial<HomeOnboardingSectionProps>> = ({
             </div>
           </div>
 
-          {/* Right Column - Video Placeholder */}
+          {/* Right Column - Video with Poster */}
           <div className="relative">
-            <div className="bg-[#D9D9D9] rounded-2xl aspect-video flex items-center justify-center p-6">
-              {/* Video Thumbnail or Placeholder */}
-              <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                {content.videoThumbnail ? (
-                  <img
-                    src={content.videoThumbnail}
-                    alt="Founder Message"
+            <div className="bg-[#D9D9D9] rounded-2xl aspect-video overflow-hidden">
+              {showVideo ? (
+                /* YouTube Video Embed */
+                <iframe
+                  src="https://www.youtube.com/embed/-i0bj5k_Srw?autoplay=1"
+                  title="Founder Message"
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              ) : (
+                /* Poster Image */
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/onboarding-poster.png"
+                    alt="Founder Message Poster"
                     className="w-full h-full object-cover"
+                    width={500}
+                    height={500}
                   />
-                ) : (
-                  <div className="w-full h-full bg-gray-300 flex items-center justify-center">
-                    <span className="text-gray-500 text-lg">
-                      Video Placeholder
-                    </span>
-                  </div>
-                )}
-
-                {/* Play Button Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-transparent border border-white rounded-full p-6">
-                    <PiPlayFill className="w-8 h-8 text-white" />
+                  <div className="absolute inset-0 bg-black/40" />
+                  {/* Play Button Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div 
+                      onClick={handlePlayVideo}
+                      className="bg-transparent border-2 border-white rounded-full p-4 shadow-lg hover:bg-white hover:bg-opacity-20 transition-all duration-200 cursor-pointer"
+                    >
+                      <PiPlayFill className="w-8 h-8 text-white" />
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
       </div>
     </section>
+   
   );
 };
 

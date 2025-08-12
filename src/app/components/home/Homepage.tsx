@@ -3,7 +3,7 @@ import HomeBannerSection from './HomeBannerSection';
 import HomeJourneySection from './HomeJourneySection';
 import HomeFeatureSection from './HomeFeatureSection';
 import HomeWorldBuildingSection from './HomeWorldBuildingSection';
-import HomeStatsSection from './HomeStatsSection';
+// import HomeStatsSection from './HomeStatsSection';
 import HomeOnboardingSection from './HomeOnboardingSection';
 
 const HomePage: React.FC = () => {
@@ -13,7 +13,7 @@ const HomePage: React.FC = () => {
       <HomeJourneySection />
       <HomeFeatureSection />
       <HomeWorldBuildingSection />
-      <HomeStatsSection />
+      {/* <HomeStatsSection /> */}
       <HomeOnboardingSection />
     </div>
   );
