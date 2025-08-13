@@ -141,7 +141,7 @@ const IdentitySelectionForm: React.FC<IdentitySelectionFormProps> = ({
                             key={option}
                             type="button"
                             onClick={() => handleIdentitySelect(option, onChange)}
-                            className="w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
+                            className="w-full px-4 py-3 text-left text-black hover:bg-gray-50 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
                           >
                             {option}
                           </button>

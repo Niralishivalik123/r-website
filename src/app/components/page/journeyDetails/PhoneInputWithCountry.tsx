@@ -295,7 +295,7 @@ const PhoneInputWithCountry: React.FC<PhoneInputWithCountryProps> = ({
                   key={country.code}
                   type="button"
                   onClick={() => handleCountrySelect(country)}
-                  className={`w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors duration-200 border-b border-gray-100 last:border-b-0 flex items-center gap-3 ${
+                  className={`w-full px-4 py-3 text-left text-black hover:bg-gray-50 transition-colors duration-200 border-b border-gray-100 last:border-b-0 flex items-center gap-3 ${
                     country.code === countryCode ? "bg-gray-50" : ""
                   }`}
                 >
@@ -341,7 +341,7 @@ const PhoneInputWithCountry: React.FC<PhoneInputWithCountryProps> = ({
 
         {/* Clear Button */}
         {hasValue && (
-          <button
+          <button title="Clear"
             type="button"
             onClick={() => setValue(name, "")}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-all duration-200 hover:scale-110"

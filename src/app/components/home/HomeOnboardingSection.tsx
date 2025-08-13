@@ -59,7 +59,7 @@ const HomeOnboardingSection: React.FC<Partial<HomeOnboardingSectionProps>> = ({
               {showVideo ? (
                 /* YouTube Video Embed */
                 <iframe
-                  src="https://www.youtube.com/embed/-i0bj5k_Srw?autoplay=1"
+                  src="https://www.youtube.com/embed/lWvXfiSkpL0?autoplay=1"
                   title="Founder Message"
                   className="w-full h-full"
                   frameBorder="0"
